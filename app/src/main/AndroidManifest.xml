@@ -23,6 +23,7 @@
         <activity android:name="StackGetMiddleElement"/>
         <activity android:name=".StackUsingOneQueue"/>
         <activity android:name=".ReverseStack"/>
+        <activity android:name=".ShortStackUsingTempStack"/>
 
     </application>
 
