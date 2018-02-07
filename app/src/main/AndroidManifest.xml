@@ -24,6 +24,7 @@
         <activity android:name=".StackUsingOneQueue"/>
         <activity android:name=".ReverseStack"/>
         <activity android:name=".ShortStackUsingTempStack"/>
+        <activity android:name=".ReverseStackUsingRecursive"/>
 
     </application>
 
