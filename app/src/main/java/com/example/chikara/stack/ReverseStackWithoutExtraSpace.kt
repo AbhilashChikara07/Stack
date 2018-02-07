@@ -14,6 +14,13 @@ class ReverseStackWithoutExtraSpace : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stack_layout)
+        makeStack(1)
+        makeStack(2)
+        makeStack(3)
+        makeStack(4)
+        makeStack(5)
+
+        head = reverseStack()
     }
 
 
@@ -36,6 +43,20 @@ class ReverseStackWithoutExtraSpace : AppCompatActivity() {
             tempHead.next = head
             head = tempHead
         }
+    }
+
+    private fun reverseStack(): StackClass {
+        var tempHead = head
+        var firstNode: StackClass? = null
+        var lastNode: StackClass? = null
+
+        while (tempHead != null) {
+            lastNode = tempHead.next
+            tempHead.next = firstNode
+            firstNode = tempHead
+            tempHead = lastNode
+        }
+        return firstNode!!
     }
 
 }
