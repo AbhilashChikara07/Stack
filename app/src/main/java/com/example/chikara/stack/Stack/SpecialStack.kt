@@ -1,8 +1,9 @@
-package com.example.chikara.stack
+package com.example.chikara.stack.Stack
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.example.chikara.stack.R
 import java.util.*
 
 /**

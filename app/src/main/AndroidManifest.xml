@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".Stack.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,13 +18,17 @@
         </activity>
 
 
-        <activity android:name=".ImplementSTackUsingQueue"/>
-        <activity android:name="SpecialStack"/>
-        <activity android:name="StackGetMiddleElement"/>
-        <activity android:name=".StackUsingOneQueue"/>
-        <activity android:name=".ReverseStack"/>
-        <activity android:name=".ShortStackUsingTempStack"/>
-        <activity android:name=".ReverseStackUsingRecursive"/>
+        <activity android:name=".Stack.ImplementSTackUsingQueue"/>
+        <activity android:name=".Stack.SpecialStack"/>
+        <activity android:name=".Stack.StackGetMiddleElement"/>
+        <activity android:name=".Stack.StackUsingOneQueue"/>
+        <activity android:name=".Stack.ReverseStack"/>
+        <activity android:name=".Stack.ShortStackUsingTempStack"/>
+        <activity android:name=".Stack.ReverseStackUsingRecursive"/>
+        <activity android:name=".Stack.Demo"/>
+        <activity android:name=".Queue.ReverseQueue"/>
+        <activity android:name=".Stack.MergeShort"/>
+        <activity android:name=".Stack.ArrayMergeShort"/>
 
     </application>
 

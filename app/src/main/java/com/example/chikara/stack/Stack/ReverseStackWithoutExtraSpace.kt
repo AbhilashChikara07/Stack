@@ -1,7 +1,8 @@
-package com.example.chikara.stack
+package com.example.chikara.stack.Stack
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import com.example.chikara.stack.R
 
 /**
  * Created by chikara on 2/7/18.
