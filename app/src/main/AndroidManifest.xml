@@ -29,6 +29,13 @@
         <activity android:name=".Queue.ReverseQueue"/>
         <activity android:name=".Stack.MergeShort"/>
         <activity android:name=".Stack.ArrayMergeShort"/>
+        <activity android:name=".Tree.BinaryTree.ConvertTreeToDoubleList"/>
+        <activity android:name=".Tree.BinaryTree.LevelOrderTraversal"/>
+        <activity android:name=".Tree.BinaryTree.LevelOrderUsingQueue"/>
+        <activity android:name=".Tree.BinaryTree.LevelOrderPrintInDifferentLine"/>
+        <activity android:name=".Tree.BinaryTree.DiffBetweenSumOfOddEvenLevel"/>
+        <activity android:name=".Tree.BinaryTree.ConvertArrayToTree"/>
+        <activity android:name=".Tree.BinaryTree.HeightOfTree"/>
 
     </application>
 

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.chikara.stack.R;
+import com.example.chikara.stack.Tree.BinaryTree.HeightOfTree;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        ArrayMergeShort.class);
+                        HeightOfTree.class);
                 startActivity(intent);
             }
         });
