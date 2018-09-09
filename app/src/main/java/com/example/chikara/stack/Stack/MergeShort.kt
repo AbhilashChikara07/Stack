@@ -12,17 +12,20 @@ import com.example.chikara.stack.R
 class MergeShort : AppCompatActivity() {
 
     private var head: NodeClass? = null
+    private var tempHead: NodeClass? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stack_layout)
+
         createList(4)
         createList(1)
         createList(9)
         createList(2)
         createList(8)
 
-        var tempHead = divideList(head!!)
+        val tempHead = divideList(head!!)
+
         displayElement(tempHead!!)
     }
 
@@ -36,41 +39,48 @@ class MergeShort : AppCompatActivity() {
         Log.e("textValue", "" + textValue)
     }
 
-    class NodeClass() {
+    class NodeClass(value: Int) {
         var value: Int? = null
         var next: NodeClass? = null
 
-        constructor(tempValue: Int) : this() {
-            this.value = tempValue
+        init {
+            this.value = value
+            next = null
         }
+
     }
 
     private fun createList(value: Int) {
         if (head == null) {
             head = NodeClass(value)
-            head!!.next = null
+            tempHead = head
         } else {
             val tempNode = NodeClass(value)
-            tempNode.next = head
-            head = tempNode
+            tempHead?.next = tempNode
+            this.tempHead = tempNode
         }
     }
 
 
-    private fun divideList(tempHead: NodeClass?): NodeClass? {
-        var tempHead = tempHead
+    private fun divideList(mList: NodeClass?): NodeClass? {
 
-        if (tempHead?.next == null)
-            return tempHead
-        val a = tempHead
-        var b = tempHead.next
-        while (b != null && b.next != null) {
-            tempHead = tempHead!!.next
-            b = b.next!!.next
+        var mTempHead = mList
+
+        if (mTempHead?.next == null || mTempHead == null)
+            return mTempHead
+
+        val mFirstList: NodeClass? = mTempHead
+        var mSecondList: NodeClass? = mTempHead.next
+
+        while (mSecondList?.next != null) {
+            mTempHead = mTempHead!!.next
+            mSecondList = mSecondList.next?.next
         }
-        b = tempHead!!.next
-        tempHead.next = null
-        return mergeShort(divideList(a)!!, divideList(b)!!)
+
+        mSecondList = mTempHead!!.next
+        mTempHead.next = null
+
+        return mergeShort(divideList(mFirstList)!!, divideList(mSecondList)!!)
     }
 
 
