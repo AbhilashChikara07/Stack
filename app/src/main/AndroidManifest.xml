@@ -17,25 +17,26 @@
             </intent-filter>
         </activity>
 
-
-        <activity android:name=".Stack.ImplementSTackUsingQueue"/>
-        <activity android:name=".Stack.SpecialStack"/>
-        <activity android:name=".Stack.StackGetMiddleElement"/>
-        <activity android:name=".Stack.StackUsingOneQueue"/>
-        <activity android:name=".Stack.ReverseStack"/>
-        <activity android:name=".Stack.ShortStackUsingTempStack"/>
-        <activity android:name=".Stack.ReverseStackUsingRecursive"/>
-        <activity android:name=".Stack.Demo"/>
-        <activity android:name=".Queue.ReverseQueue"/>
-        <activity android:name=".Stack.MergeShort"/>
-        <activity android:name=".Stack.ArrayMergeShort"/>
-        <activity android:name=".Tree.BinaryTree.ConvertTreeToDoubleList"/>
-        <activity android:name=".Tree.BinaryTree.LevelOrderTraversal"/>
-        <activity android:name=".Tree.BinaryTree.LevelOrderUsingQueue"/>
-        <activity android:name=".Tree.BinaryTree.LevelOrderPrintInDifferentLine"/>
-        <activity android:name=".Tree.BinaryTree.DiffBetweenSumOfOddEvenLevel"/>
-        <activity android:name=".Tree.BinaryTree.ConvertArrayToTree"/>
-        <activity android:name=".Tree.BinaryTree.HeightOfTree"/>
+        <activity android:name=".Stack.ImplementSTackUsingQueue" />
+        <activity android:name=".Stack.SpecialStack" />
+        <activity android:name=".Stack.StackGetMiddleElement" />
+        <activity android:name=".Stack.StackUsingOneQueue" />
+        <activity android:name=".Stack.ReverseStack" />
+        <activity android:name=".Stack.ShortStackUsingTempStack" />
+        <activity android:name=".Stack.ReverseStackUsingRecursive" />
+        <activity android:name=".Stack.DesignStackGetMin" />
+        <activity android:name=".Stack.ImplementQueueUsingTwoStack" />
+        <activity android:name=".Stack.DesignStackGetMinElement" />
+        <activity android:name=".Queue.ReverseQueue" />
+        <activity android:name=".Stack.MergeShort" />
+        <activity android:name=".Stack.ArrayMergeShort" />
+        <activity android:name=".Tree.BinaryTree.ConvertTreeToDoubleList" />
+        <activity android:name=".Tree.BinaryTree.LevelOrderTraversal" />
+        <activity android:name=".Tree.BinaryTree.LevelOrderUsingQueue" />
+        <activity android:name=".Tree.BinaryTree.LevelOrderPrintInDifferentLine" />
+        <activity android:name=".Tree.BinaryTree.DiffBetweenSumOfOddEvenLevel" />
+        <activity android:name=".Tree.BinaryTree.ConvertArrayToTree" />
+        <activity android:name=".Tree.BinaryTree.HeightOfTree" />
 
     </application>
 

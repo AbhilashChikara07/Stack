@@ -45,12 +45,15 @@ class ImplementSTackUsingQueue : AppCompatActivity() {
     private fun deleteFromQueue(stack_1: Stack<Int>, stack_2: Stack<Int>) {
         if (stack_1.empty() && stack_2.empty()) {
             Log.e("stack status", "stacks are empty")
+
         } else {
             while (!stack_1.empty()) {
                 stack_2.push(stack_1.pop())
             }
             Log.e("DEQUEUE VALUE IS :- ", "" + stack_2.pop())
+
         }
+
     }
 
 }
