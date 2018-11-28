@@ -7,6 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.chikara.stack.R;
+import com.example.chikara.stack.Tree.BinaryTree.LevelOrderTraversal;
+import com.example.chikara.stack.Tree.BinaryTree.PreOrderTraversal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        DesignStackGetMin.class);
+                        PreOrderTraversal.class);
                 startActivity(intent);
             }
         });

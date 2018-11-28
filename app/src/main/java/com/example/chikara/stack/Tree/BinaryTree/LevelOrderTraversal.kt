@@ -17,6 +17,7 @@ class LevelOrderTraversal : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tree_activity_layout)
+
         insertElementInTree()
         printLevelOrder()
     }
@@ -35,13 +36,31 @@ class LevelOrderTraversal : AppCompatActivity() {
 
     private fun insertElementInTree() {
         head = TreeClass(1)
+
         head!!.left = TreeClass(2)
         head!!.right = TreeClass(3)
+
         head!!.left!!.left = TreeClass(4)
         head!!.left!!.right = TreeClass(5)
-        head!!.left!!.right!!.left = TreeClass(6)
+
+        head!!.right!!.left = TreeClass(6)
+        head!!.right!!.right = TreeClass(7)
     }
 
+
+    private fun printLevelOrder() {
+        val h = getTreeHeight(head)
+        var i: Int = 1
+        while (i <= h) {
+            printGivenLevel(head, i)
+            i++
+        }
+    }
+
+
+    /***
+     * Height of the tree can explain like total no of edges in longest path.
+     * */
     private fun getTreeHeight(node: TreeClass?): Int {
         if (node == null)
             return 0
@@ -56,14 +75,6 @@ class LevelOrderTraversal : AppCompatActivity() {
         }
     }
 
-    private fun printLevelOrder() {
-        val h = getTreeHeight(head)
-        var i: Int = 1
-        while (i <= h) {
-            printGivenLevel(head, i)
-            i++
-        }
-    }
 
     private fun printGivenLevel(root: TreeClass?, level: Int) {
         if (root == null)

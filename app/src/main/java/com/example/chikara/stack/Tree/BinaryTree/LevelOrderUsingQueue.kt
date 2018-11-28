@@ -19,6 +19,7 @@ class LevelOrderUsingQueue : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tree_activity_layout)
+
         insertValueInTree()
         traversalFunction(head!!)
     }

@@ -6,18 +6,16 @@ import android.util.Log
 import com.example.chikara.stack.R
 import java.util.*
 
-/**
- * Created by chikara on 3/9/18.
- */
-
-class InOrderTraversal : AppCompatActivity() {
+class PreOrderTraversal : AppCompatActivity() {
 
     private var mHead: Tree? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tree_activity_layout)
+
         createTree()
+        withOutRecursiveTraversal(mHead)
     }
 
     class Tree(mTempValue: Int) {
@@ -44,36 +42,32 @@ class InOrderTraversal : AppCompatActivity() {
         mHead?.mRight!!.mRight = Tree(7)
     }
 
-
     /***
-     * Get inorder traversal by recursive.
+     * Without recursive.
      * */
-    private fun inOrderTraversal(mRoot: PreOrderTraversal.Tree?) {
-        if (mRoot == null)
-            return
-        inOrderTraversal(mRoot?.mLeft)
-        Log.e("print-element", "" + mRoot?.mData)
-        inOrderTraversal(mRoot?.mRight)
+    private fun preOrderTraversal(mRoot: Tree?) {
+        Log.e("pre-order-traversal", "" + mRoot?.mData)
+        preOrderTraversal(mRoot?.mLeft)
+        preOrderTraversal(mRoot?.mRight)
+
     }
 
-    var mStack = Stack<Tree>()
 
+    var mStack = Stack<Tree>()
     /***
-     * Get inorder traversal without recursive.
+     * With-out recursive.
      * */
-    private fun withOutRecursive(mRoot: Tree?) {
-        var mRoot = this.mHead
+    private fun withOutRecursiveTraversal(mRoot: Tree?) {
+        var mRoot: Tree? = mRoot
 
         while (true) {
-
             while (mRoot != null) {
+                Log.e("pre-order-traversal", "" + mRoot.mData)
                 mStack.push(mRoot)
                 mRoot = mRoot.mLeft
             }
-
-            if (!mStack.empty()) {
+            if (!mStack.isEmpty()) {
                 mRoot = mStack.pop()
-                Log.e("in-order-traversal", "" + mRoot.mData)
                 mRoot = mRoot.mRight
 
             } else
