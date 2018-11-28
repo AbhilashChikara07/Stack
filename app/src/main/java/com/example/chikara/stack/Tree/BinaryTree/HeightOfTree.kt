@@ -19,7 +19,7 @@ class HeightOfTree : AppCompatActivity() {
         setContentView(R.layout.tree_activity_layout)
         insertElementInTree()
         val height = getHeightByRecursive(head)
-        Log.e("HEIGHT",""+height)
+        Log.e("HEIGHT", "" + height)
     }
 
     class TreeClass(tempValue: Int) {
@@ -45,10 +45,9 @@ class HeightOfTree : AppCompatActivity() {
     }
 
 
-    /*
-    * By using recursive we can get Height of tree
-    * */
-
+    /***
+     * By using recursive we can get Height of tree
+     * */
     private fun getHeightByRecursive(root: TreeClass?): Int {
         if (root == null)
             return 0
@@ -62,13 +61,17 @@ class HeightOfTree : AppCompatActivity() {
             return left + 1
     }
 
+    /***
+     *
+     * */
+//    private fun
     /*
     * By Level order traversal we also can get height of tree
     * */
 
-    private fun getHeightByLevelOrderTraversal(root: TreeClass): Int {
+    fun getHeightByLevelOrderTraversal(root: TreeClass): Int {
 
-        var mQueue: Queue<TreeClass> ? = LinkedList<TreeClass>()
+        var mQueue: Queue<TreeClass>? = LinkedList<TreeClass>()
         return 0
     }
 
