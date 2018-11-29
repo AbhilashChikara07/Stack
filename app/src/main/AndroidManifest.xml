@@ -39,6 +39,7 @@
         <activity android:name=".Tree.BinaryTree.HeightOfTree" />
         <activity android:name=".Tree.BinaryTree.PreOrderTraversal" />
         <activity android:name=".Tree.BinaryTree.TwoTreeIdentical" />
+        <activity android:name=".Tree.BinaryTree.SpiralOrderTraversal" />
 
     </application>
 

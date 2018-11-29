@@ -2,7 +2,7 @@ package com.example.chikara.stack.Tree.BinaryTree
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
+import android.widget.TextView
 import com.example.chikara.stack.R
 import java.util.*
 
@@ -18,8 +18,11 @@ class HeightOfTree : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tree_activity_layout)
         insertElementInTree()
-        val height = getHeightByRecursive(head)
-        Log.e("HEIGHT", "" + height)
+
+//        val height = getHeightByRecursive(head)
+        val height = withOutRecursive(head!!)
+        findViewById<TextView>(R.id.displayValue).text = "" + height
+
     }
 
     class TreeClass(tempValue: Int) {
@@ -62,17 +65,43 @@ class HeightOfTree : AppCompatActivity() {
     }
 
     /***
-     *
+     *Without recursive get tree height.
      * */
-//    private fun
-    /*
-    * By Level order traversal we also can get height of tree
-    * */
+    private fun withOutRecursive(mRoot: TreeClass): Int {
+        val mQueue = LinkedList<TreeClass>()
+        var mHeight: Int = 0
 
-    fun getHeightByLevelOrderTraversal(root: TreeClass): Int {
+        mQueue.add(mRoot)
 
-        var mQueue: Queue<TreeClass>? = LinkedList<TreeClass>()
-        return 0
+        while (true) {
+            if (!mQueue.isEmpty()) {
+                var mSize = mQueue.size
+                while (mSize != 0) {
+                    val mRoot = mQueue.poll()
+
+                    if (mRoot.left != null)
+                        mQueue.add(mRoot.left!!)
+
+                    if (mRoot.right != null)
+                        mQueue.add(mRoot.right!!)
+
+                    mSize -= 1
+                }
+                mHeight += 1
+            } else break
+        }
+
+        return mHeight
     }
+
+//    /*
+//    * By Level order traversal we also can get height of tree
+//    * */
+//
+//    fun getHeightByLevelOrderTraversal(root: TreeClass): Int {
+//
+//        var mQueue: Queue<TreeClass>? = LinkedList<TreeClass>()
+//        return 0
+//    }
 
 }
