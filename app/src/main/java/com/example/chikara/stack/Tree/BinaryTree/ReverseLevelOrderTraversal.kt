@@ -6,23 +6,20 @@ import android.util.Log
 import android.widget.TextView
 import com.example.chikara.stack.R
 import java.util.*
-import kotlin.collections.ArrayList
 
-/***
- *In Spiral-order-traversal first we print all node
- * from left-to-right then right-to-left.
- * */
-class SpiralOrderTraversal : AppCompatActivity() {
+class ReverseLevelOrderTraversal : AppCompatActivity() {
 
     private var mHead: Tree? = null
+    var mQueue = LinkedList<Tree>()
+    var mArrayQueue = Stack<ArrayList<Int>>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tree_activity_layout)
 
         createTree()
-        getSpiralOrderTraversal(mHead!!)
-        printAllInSpiralOrder(mArrayQueue)
+        reverseOrderTraversal(mHead!!)
+        printAllInReverseOrder(mArrayQueue)
     }
 
     class Tree(mTempValue: Int) {
@@ -50,13 +47,7 @@ class SpiralOrderTraversal : AppCompatActivity() {
     }
 
 
-    var mQueue = LinkedList<Tree>()
-    var mArrayQueue = LinkedList<ArrayList<Int>>()
-
-    /***
-     * With-out-recursive
-     * */
-    private fun getSpiralOrderTraversal(mRoot: Tree) {
+    private fun reverseOrderTraversal(mRoot: Tree) {
         mQueue.add(mRoot)
 
         while (true) {
@@ -80,26 +71,18 @@ class SpiralOrderTraversal : AppCompatActivity() {
             if (mQueue.isEmpty())
                 break
         }
+
     }
 
-
-    private fun printAllInSpiralOrder(mQueue: LinkedList<ArrayList<Int>>) {
+    private fun printAllInReverseOrder(mQueue: Stack<ArrayList<Int>>) {
         val mFinalString: StringBuilder = StringBuilder()
 
         while (!mQueue.isEmpty()) {
-            val mQueueSize = mQueue.size
-            val mIntArray = mQueue.poll()
+            val mIntArray = mArrayQueue.pop()
 
-            if (mQueueSize % 2 == 0) {
-                for (i in 0 until mIntArray.size)
-                    mFinalString.append(mIntArray[i].toString())
+            for (i in 0 until mIntArray.size)
+                mFinalString.append(mIntArray[i].toString())
 
-            } else {
-                mIntArray.reverse()
-                for (i in 0 until mIntArray.size)
-                    mFinalString.append(mIntArray[i].toString())
-
-            }
 
             mFinalString.append(",")
         }

@@ -79,6 +79,9 @@ class TwoTreeIdentical : AppCompatActivity() {
     private var mFirstTreeQueue = LinkedList<Tree>()
     private var mSecondTreeQueue = LinkedList<Tree>()
 
+    /***
+     * Without recursive get two tree are identical
+     * */
     private fun findTreeAreIdentical(mFirstHead: Tree?, mSecondHead: Tree?): Boolean {
         if (mFirstHead == null && mSecondHead != null)
             return false
