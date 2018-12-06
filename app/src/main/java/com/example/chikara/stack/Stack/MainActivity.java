@@ -7,11 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.chikara.stack.R;
-import com.example.chikara.stack.Tree.BinaryTree.HeightOfTree;
-import com.example.chikara.stack.Tree.BinaryTree.LevelOrderTraversal;
-import com.example.chikara.stack.Tree.BinaryTree.PreOrderTraversal;
-import com.example.chikara.stack.Tree.BinaryTree.SpiralOrderTraversal;
-import com.example.chikara.stack.Tree.BinaryTree.TwoTreeIdentical;
+import com.example.chikara.stack.Tree.BinaryTree.LeftViewOfTree;
+import com.example.chikara.stack.Tree.BinaryTree.TreeBottomView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        SpiralOrderTraversal.class);
+                        TreeBottomView.class);
                 startActivity(intent);
             }
         });

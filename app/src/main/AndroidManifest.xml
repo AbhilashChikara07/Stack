@@ -40,7 +40,9 @@
         <activity android:name=".Tree.BinaryTree.PreOrderTraversal" />
         <activity android:name=".Tree.BinaryTree.TwoTreeIdentical" />
         <activity android:name=".Tree.BinaryTree.SpiralOrderTraversal" />
-        <activity android:name=".Tree.BinaryTree.ReverseLevelOrderTraversal" />
+        <activity android:name=".Tree.BinaryTree.SpecialOrder" />
+        <activity android:name=".Tree.BinaryTree.LeftViewOfTree" />
+        <activity android:name=".Tree.BinaryTree.TreeBottomView" />
 
     </application>
 
