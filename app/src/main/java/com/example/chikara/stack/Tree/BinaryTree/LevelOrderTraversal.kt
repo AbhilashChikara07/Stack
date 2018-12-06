@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.chikara.stack.R
+import java.util.*
 
 
 /**
@@ -86,4 +87,36 @@ class LevelOrderTraversal : AppCompatActivity() {
             printGivenLevel(root.right, level - 1)
         }
     }
+
+    var mQueue: LinkedList<TreeClass> = LinkedList()
+
+    fun withOutRecursiveLevelOrderTraversal(mTempHead: TreeClass) {
+        var mStringBuilder: StringBuilder = StringBuilder()
+
+        mQueue.add(mTempHead)
+        while (true) {
+            var mSize = mQueue.size
+            var mRoot = mQueue.poll()
+            mStringBuilder.append(mRoot.value)
+
+            while (mSize != 0) {
+                mSize -= 1
+
+                if (mRoot.left != null)
+                    mQueue.add(mRoot.left!!)
+
+                if (mRoot.right != null)
+                    mQueue.add(mRoot.right!!)
+
+                if (mSize != 0) {
+                    mRoot = mQueue.poll()
+                    mStringBuilder.append(mRoot.value)
+                }
+            }
+            if (mQueue.isEmpty())
+                break
+
+        }
+    }
+
 }

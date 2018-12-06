@@ -7,8 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.chikara.stack.R;
-import com.example.chikara.stack.Tree.BinaryTree.LeftViewOfTree;
-import com.example.chikara.stack.Tree.BinaryTree.TreeBottomView;
+import com.example.chikara.stack.Tree.BinaryTree.ConvertArrayToTree;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        TreeBottomView.class);
+                        ConvertArrayToTree.class);
                 startActivity(intent);
             }
         });

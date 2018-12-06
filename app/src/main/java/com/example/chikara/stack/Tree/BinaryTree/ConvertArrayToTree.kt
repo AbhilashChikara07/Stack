@@ -4,10 +4,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.example.chikara.stack.R
-import android.R.attr.right
-import android.R.attr.left
-import android.R.attr.data
-
+import java.util.*
 
 
 /**
@@ -35,6 +32,9 @@ class ConvertArrayToTree : AppCompatActivity() {
         head = divideArrayForMakeNode(intArray)
 //        head = cnvrt(intArray, 0)
         preOrderTraversal(head!!)
+        Log.e("mStringBuilder", "" + mStringBuilder)
+
+        withOutRecursiveLevelOrderTraversal(head!!)
     }
 
     class TreeClass(tempValue: Int) {
@@ -51,28 +51,33 @@ class ConvertArrayToTree : AppCompatActivity() {
 
     private fun divideArrayForMakeNode(tempArray: IntArray?): TreeClass? {
 
-        if (tempArray?.size==1)
+        if (tempArray!!.size == 0)
             return null
+        else if (tempArray.size == 1)
+            return TreeClass(tempArray[0])
+        else {
+            val mid = tempArray.size / 2
+            val leftArray = IntArray(mid)
+            val rightArray = IntArray(tempArray.size - mid - 1)
+            var count: Int? = 0
 
-        val mid = tempArray!!.size / 2
-        val leftArray = IntArray(mid)
-        val rightArray = IntArray(tempArray.size - mid)
-        var count: Int? = 0
+            for (i in 0 until mid) {
+                leftArray[i] = tempArray[i]
+            }
 
-        for (i in 0 until mid) {
-            leftArray[i] = tempArray[i]
+            for (i in mid + 1 until tempArray.size) {
+                rightArray[count!!] = tempArray[i]
+                count++
+            }
+
+            val root = TreeClass(tempArray[mid])
+
+            root.leftNode = divideArrayForMakeNode(leftArray)
+            root.rightNode = divideArrayForMakeNode(rightArray)
+
+            return root
         }
 
-        for (i in mid until tempArray.size) {
-            rightArray[count!!] = tempArray[i]
-            count++
-        }
-
-        val root = TreeClass(tempArray[mid])
-        root.leftNode = divideArrayForMakeNode(leftArray)
-        root.rightNode = divideArrayForMakeNode(rightArray)
-
-        return root
     }
 
     fun cnvrt(ar: IntArray, pos: Int): TreeClass? {
@@ -85,12 +90,48 @@ class ConvertArrayToTree : AppCompatActivity() {
         return tmp
     }
 
+    var mStringBuilder: StringBuilder = StringBuilder()
     private fun preOrderTraversal(tempHead: TreeClass?) {
         if (tempHead == null)
             return
-        Log.e("DATA", "" + tempHead.value)
+
         preOrderTraversal(tempHead.leftNode)
+        mStringBuilder.append(tempHead.value)
+        mStringBuilder.append(",")
         preOrderTraversal(tempHead.rightNode)
+    }
+
+    var mQueue: LinkedList<TreeClass> = LinkedList()
+
+    private fun withOutRecursiveLevelOrderTraversal(mTempHead: TreeClass) {
+        val mStringBuilder: StringBuilder = StringBuilder()
+
+        mQueue.add(mTempHead)
+        while (true) {
+            var mSize = mQueue.size
+            var mRoot = mQueue.poll()
+            mStringBuilder.append(mRoot.value)
+
+            while (mSize != 0) {
+                mSize -= 1
+
+                if (mRoot.leftNode != null)
+                    mQueue.add(mRoot.leftNode!!)
+
+                if (mRoot.rightNode != null)
+                    mQueue.add(mRoot.rightNode!!)
+
+                if (mSize != 0) {
+                    mRoot = mQueue.poll()
+                    mStringBuilder.append(mRoot.value)
+                }
+            }
+            mStringBuilder.append(",")
+            if (mQueue.isEmpty())
+                break
+        }
+
+        Log.e("Abhilash", "" + mStringBuilder)
     }
 
 }
