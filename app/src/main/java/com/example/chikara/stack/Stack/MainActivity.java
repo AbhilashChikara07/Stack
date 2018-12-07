@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.chikara.stack.R;
+import com.example.chikara.stack.Tree.BinaryTree.CheckForCousinsNode;
 import com.example.chikara.stack.Tree.BinaryTree.ConvertArrayToTree;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        ConvertArrayToTree.class);
+                        CheckForCousinsNode.class);
                 startActivity(intent);
             }
         });

@@ -43,6 +43,7 @@
         <activity android:name=".Tree.BinaryTree.SpecialOrder" />
         <activity android:name=".Tree.BinaryTree.LeftViewOfTree" />
         <activity android:name=".Tree.BinaryTree.TreeBottomView" />
+        <activity android:name=".Tree.BinaryTree.CheckForCousinsNode" />
 
     </application>
 
