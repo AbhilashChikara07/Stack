@@ -6,6 +6,15 @@ import android.widget.TextView
 import com.example.chikara.stack.R
 import java.util.*
 
+
+/***
+ * To delete a node in BT follow some steps:-
+ * 1- Find last node of tree.
+ * 2- Save last node of tree locally.
+ * 3- Now delete last node.
+ * 4- Now replace selected node value with last local node.
+ * 5- Now final step traverse all node.
+ * */
 class DeleteNode : AppCompatActivity() {
 
     var head: TreeClass? = null
