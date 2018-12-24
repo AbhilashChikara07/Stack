@@ -45,6 +45,12 @@
         <activity android:name=".Tree.BinaryTree.TreeBottomView" />
         <activity android:name=".Tree.BinaryTree.CheckForCousinsNode" />
         <activity android:name=".Tree.BinaryTree.GetCousinsOfNode" />
+        <activity android:name=".Tree.BinaryTree.BST.InsertionBST" />
+        <activity android:name=".Tree.BinaryTree.BST.DeletionBST" />
+        <activity android:name=".Tree.BinaryTree.ConvertToSumTree" />
+        <activity android:name=".Tree.BinaryTree.TreeToMirrorImage" />
+        <activity android:name=".Tree.BinaryTree.PrintPathFromRootToLeafNode" />
+        <activity android:name=".Tree.BinaryTree.VerticalTraversal" />
 
     </application>
 

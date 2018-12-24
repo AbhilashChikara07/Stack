@@ -7,9 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.chikara.stack.R;
-import com.example.chikara.stack.Tree.BinaryTree.CheckForCousinsNode;
-import com.example.chikara.stack.Tree.BinaryTree.ConvertArrayToTree;
-import com.example.chikara.stack.Tree.BinaryTree.GetCousinsOfNode;
+import com.example.chikara.stack.Tree.BinaryTree.BST.DeletionBST;
+import com.example.chikara.stack.Tree.BinaryTree.BST.InsertionBST;
+import com.example.chikara.stack.Tree.BinaryTree.ConvertToSumTree;
+import com.example.chikara.stack.Tree.BinaryTree.PrintPathFromRootToLeafNode;
+import com.example.chikara.stack.Tree.BinaryTree.TreeToMirrorImage;
+import com.example.chikara.stack.Tree.BinaryTree.VerticalTraversal;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        GetCousinsOfNode.class);
+                        VerticalTraversal.class);
                 startActivity(intent);
             }
         });
