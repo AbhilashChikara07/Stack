@@ -10,6 +10,7 @@ import com.example.chikara.stack.R;
 import com.example.chikara.stack.Tree.BinaryTree.BST.DeletionBST;
 import com.example.chikara.stack.Tree.BinaryTree.BST.InsertionBST;
 import com.example.chikara.stack.Tree.BinaryTree.ConvertToSumTree;
+import com.example.chikara.stack.Tree.BinaryTree.DeleteNode;
 import com.example.chikara.stack.Tree.BinaryTree.PrintPathFromRootToLeafNode;
 import com.example.chikara.stack.Tree.BinaryTree.TreeToMirrorImage;
 import com.example.chikara.stack.Tree.BinaryTree.VerticalTraversal;
@@ -28,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        VerticalTraversal.class);
+                        DeleteNode.class);
                 startActivity(intent);
             }
         });

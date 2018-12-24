@@ -51,6 +51,7 @@
         <activity android:name=".Tree.BinaryTree.TreeToMirrorImage" />
         <activity android:name=".Tree.BinaryTree.PrintPathFromRootToLeafNode" />
         <activity android:name=".Tree.BinaryTree.VerticalTraversal" />
+        <activity android:name=".Tree.BinaryTree.DeleteNode" />
 
     </application>
 
