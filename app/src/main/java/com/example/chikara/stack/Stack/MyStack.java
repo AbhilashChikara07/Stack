@@ -11,6 +11,8 @@ import java.util.Stack;
 
 public class MyStack extends AppCompatActivity{
 
+    int array[] = new int[4];
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
