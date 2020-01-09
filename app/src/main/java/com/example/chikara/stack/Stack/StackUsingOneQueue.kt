@@ -36,6 +36,17 @@ class StackUsingOneQueue : AppCompatActivity() {
         }
     }
 
+
+    private fun pop() {
+        if (queue.isEmpty())
+            return
+        else {
+            queue.peek()
+            queue.remove()
+        }
+    }
+
+
     private fun getTopElement() {
         Log.e("top element is :- ", "" + queue.peek())
     }

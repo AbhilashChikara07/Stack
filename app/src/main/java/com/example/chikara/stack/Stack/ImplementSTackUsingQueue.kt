@@ -11,6 +11,7 @@ import java.util.*
  */
 
 class ImplementSTackUsingQueue : AppCompatActivity() {
+    var queue: Queue<Int> = LinkedList()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,38 +23,43 @@ class ImplementSTackUsingQueue : AppCompatActivity() {
         * 2- By making dequeue operation complex
         * */
 
-        val queueObj: Queue? = Queue()
-        insertValueIntoQueue(queueObj!!.stack_1, 1)
-        insertValueIntoQueue(queueObj.stack_1, 2)
-        insertValueIntoQueue(queueObj.stack_1, 3)
-        insertValueIntoQueue(queueObj.stack_1, 4)
-        insertValueIntoQueue(queueObj.stack_1, 5)
+        push(1)
+        push(2)
+        push(3)
+        push(4)
+        push(5)
 
-        deleteFromQueue(queueObj.stack_1!!, queueObj.stack_2!!)
+        /**
+         * REMOVE ELEMENT
+         * */
+        pop()
+        pop()
+
     }
 
-
-    inner class Queue {
-        var stack_1: Stack<Int>? = Stack()
-        var stack_2: Stack<Int>? = Stack()
+    private fun push(item: Int) {
+        queue.add(item)
     }
 
-    private fun insertValueIntoQueue(stack_1: Stack<Int>?, i: Int) {
-        stack_1!!.push(i)
-    }
-
-    private fun deleteFromQueue(stack_1: Stack<Int>, stack_2: Stack<Int>) {
-        if (stack_1.empty() && stack_2.empty()) {
-            Log.e("stack status", "stacks are empty")
-
-        } else {
-            while (!stack_1.empty()) {
-                stack_2.push(stack_1.pop())
+    private fun pop() {
+        if (queue.isEmpty())
+            return
+        else {
+            val tempQueue: Queue<Int> = LinkedList()
+            while (queue.size != 1) {
+                tempQueue.add(queue.peek())
+                queue.remove()
             }
-            Log.e("DEQUEUE VALUE IS :- ", "" + stack_2.pop())
+            /***
+             * Remove last element
+             * */
+            queue.remove()
+            /**
+             * end
+             * */
 
+            queue = tempQueue
         }
-
     }
 
 }

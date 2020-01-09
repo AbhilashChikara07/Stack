@@ -54,6 +54,8 @@
         <activity android:name=".Tree.BinaryTree.DeleteNode" />
         <activity android:name=".Stack.ArrayStackImplementation"/>
         <activity android:name=".Stack.ImplementStackByLinkedList"/>
+        <activity android:name=".Stack.PrecticeStack"/>
+        <activity android:name=".Stack.DeleteNextSmallerElement"/>
 
     </application>
 

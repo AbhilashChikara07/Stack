@@ -2,9 +2,9 @@ package com.example.chikara.stack.Stack
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.widget.TextView
 import com.example.chikara.stack.R
 import java.lang.NullPointerException
-import java.util.*
 
 class ImplementStackByLinkedList : AppCompatActivity() {
     var head: NodeClass? = null
@@ -19,6 +19,10 @@ class ImplementStackByLinkedList : AppCompatActivity() {
         push(4)
         push(5)
         traverseStack()
+        pop()
+        pop()
+        traverseStack()
+
     }
 
     class NodeClass {
@@ -55,7 +59,6 @@ class ImplementStackByLinkedList : AppCompatActivity() {
     }
 
 
-
     private fun traverseStack() {
         var tempNode = head
         val buffer = StringBuffer()
@@ -64,6 +67,8 @@ class ImplementStackByLinkedList : AppCompatActivity() {
             buffer.append(tempNode.data)
             tempNode = tempNode.next
         }
+
+        findViewById<TextView>(R.id.displayValue).text = buffer
     }
 
 }
