@@ -56,6 +56,7 @@
         <activity android:name=".Stack.ImplementStackByLinkedList"/>
         <activity android:name=".Stack.PrecticeStack"/>
         <activity android:name=".Stack.DeleteNextSmallerElement"/>
+        <activity android:name=".Stack.ShortStackUsingRecursion"/>
 
     </application>
 
