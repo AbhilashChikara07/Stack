@@ -57,6 +57,9 @@
         <activity android:name=".Stack.PrecticeStack"/>
         <activity android:name=".Stack.DeleteNextSmallerElement"/>
         <activity android:name=".Stack.ShortStackUsingRecursion"/>
+        <activity android:name=".Stack.ReverseQueue"/>
+        <activity android:name=".Queue.PriorityQueue"/>
+        <activity android:name=".Queue.LRUCashing"/>
 
     </application>
 

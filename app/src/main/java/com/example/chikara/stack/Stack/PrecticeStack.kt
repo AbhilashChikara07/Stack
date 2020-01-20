@@ -10,53 +10,52 @@ import java.util.*
 
 class PrecticeStack : AppCompatActivity() {
 
-    var unshortStack = Stack<Int>()
-    var shortStack = Stack<Int>()
+    var charArray = CharArray(9)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stack_layout)
 
-        unshortStack.push(5)
-        unshortStack.push(3)
-        unshortStack.push(4)
-        unshortStack.push(1)
-        unshortStack.push(6)
-        unshortStack.push(2)
+        charArray[0] = 'a'
+        charArray[1] = 'a'
+        charArray[2] = 'a'
+        charArray[3] = 'a'
+        charArray[4] = 'a'
+        charArray[5] = 'b'
+        charArray[6] = 'b'
+        charArray[7] = 'a'
+        charArray[8] = 'a'
 
-        shortStackWithRecursion()
-        traverseStack()
+        longestSubArray()
     }
 
 
-    private fun shortStackWithRecursion() {
-        var item: Int? = null
-        if (unshortStack.size > 0) {
-            item = unshortStack.pop()
-            shortStackWithRecursion()
+    private fun longestSubArray() {
+        var max: Int = 0
+        var tempMax: Int = 0
+        var charName: Char = 'd'
+
+        for (i in charArray.indices) {
+            if (i + 1 <= charArray.size-1) {
+                if (charArray[i] == charArray[i + 1]) {
+                    tempMax += 1
+                } else {
+                    if (max < tempMax) {
+                        max = tempMax
+                        charName = charArray[i]
+                        max += 1
+                    }
+                    tempMax = 0
+                }
+            } else {
+                max = tempMax
+                charName = charArray[i]
+                max += 1
+            }
         }
-        if (item != null)
-            shortStack(item)
-    }
 
-    private fun shortStack(item: Int) {
-        if (shortStack.size == 0 || item < shortStack.peek()){
-            shortStack.push(item)
-            return
-        }
-
-        val lastElement = shortStack.pop()
-        shortStack(item)
-        shortStack.push(lastElement)
-
-    }
-
-    private fun traverseStack() {
-        var stringBuffer: StringBuilder = StringBuilder()
-        while (shortStack.size > 0) {
-            val item = shortStack.pop()
-            Log.e("stack", "" + item)
-        }
+        Log.e("MAX-LENGTH", "" + max)
+        Log.e("CHAR-NAME", "" + charName)
     }
 
 }
