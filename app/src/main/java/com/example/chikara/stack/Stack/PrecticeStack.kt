@@ -5,57 +5,61 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.TextView
 import com.example.chikara.stack.R
+import org.w3c.dom.Node
 import java.lang.StringBuilder
 import java.util.*
 
 class PrecticeStack : AppCompatActivity() {
 
-    var charArray = CharArray(9)
+    var head: NodeClass? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.stack_layout)
+        createList(1)
+        createList(3)
+        createList(2)
+        createList(4)
 
-        charArray[0] = 'a'
-        charArray[1] = 'a'
-        charArray[2] = 'a'
-        charArray[3] = 'a'
-        charArray[4] = 'a'
-        charArray[5] = 'b'
-        charArray[6] = 'b'
-        charArray[7] = 'a'
-        charArray[8] = 'a'
-
-        longestSubArray()
+        divideNodeList(head!!)
     }
 
+    private fun createList(item: Int) {
+        val node = getNode(item)
+        if (null == head)
+            head = node
+        else {
+            node.next = head
+            head = node
+        }
+    }
 
-    private fun longestSubArray() {
-        var max: Int = 0
-        var tempMax: Int = 0
-        var charName: Char = 'd'
+    private fun getNode(item: Int): NodeClass {
+        val node = NodeClass()
+        node.data = item
+        node.next = null
+        return node
+    }
 
-        for (i in charArray.indices) {
-            if (i + 1 <= charArray.size-1) {
-                if (charArray[i] == charArray[i + 1]) {
-                    tempMax += 1
-                } else {
-                    if (max < tempMax) {
-                        max = tempMax
-                        charName = charArray[i]
-                        max += 1
-                    }
-                    tempMax = 0
-                }
-            } else {
-                max = tempMax
-                charName = charArray[i]
-                max += 1
-            }
+    private fun divideNodeList(nodeList: NodeClass) {
+        val tempNode = nodeList
+        var firstHalf = tempNode
+        var secondHalf = firstHalf.next
+
+        while (null != firstHalf.next && null != secondHalf!!.next) {
+            firstHalf = firstHalf.next!!
+            secondHalf = secondHalf.next!!.next
         }
 
-        Log.e("MAX-LENGTH", "" + max)
-        Log.e("CHAR-NAME", "" + charName)
+        secondHalf = firstHalf.next
+        firstHalf.next = null
+        firstHalf = tempNode
+
     }
 
+}
+
+class NodeClass {
+    var next: NodeClass? = null
+    var data: Int? = null
 }

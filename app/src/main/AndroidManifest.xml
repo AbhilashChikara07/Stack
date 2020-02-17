@@ -61,6 +61,8 @@
         <activity android:name=".Queue.PriorityQueue"/>
         <activity android:name=".Queue.LRUCashing"/>
         <activity android:name=".Queue.LRUCashingByLinkedList"/>
+        <activity android:name=".Queue.ReverseQueueByRecursion"/>
+        <activity android:name=".Queue.ShortQueueWithRecursive"/>
 
     </application>
 

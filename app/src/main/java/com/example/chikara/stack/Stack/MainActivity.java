@@ -9,6 +9,7 @@ import android.widget.Button;
 import com.example.chikara.stack.Queue.LRUCashing;
 import com.example.chikara.stack.Queue.LRUCashingByLinkedList;
 import com.example.chikara.stack.Queue.PriorityQueue;
+import com.example.chikara.stack.Queue.ShortQueueWithRecursive;
 import com.example.chikara.stack.R;
 import com.example.chikara.stack.Tree.BinaryTree.BST.DeletionBST;
 import com.example.chikara.stack.Tree.BinaryTree.BST.InsertionBST;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,
-                        LRUCashingByLinkedList.class);
+                        PrecticeStack.class);
                 startActivity(intent);
             }
         });

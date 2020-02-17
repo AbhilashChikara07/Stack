@@ -2,6 +2,8 @@ package com.example.chikara.stack.Queue
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import java.util.*
+import kotlin.collections.HashMap
 
 class LRUCashingByLinkedList : AppCompatActivity() {
 
@@ -15,7 +17,9 @@ class LRUCashingByLinkedList : AppCompatActivity() {
         insertItem(2)
         insertItem(3)
         insertItem(1)
+
     }
+
 
     private fun insertItem(item: Int) {
         if (!map.containsKey(item)) {
