@@ -43,7 +43,7 @@ class PreOrderTraversal : AppCompatActivity() {
     }
 
     /***
-     * Without recursive.
+     * With recursive.
      * */
     private fun preOrderTraversal(mRoot: Tree?) {
         Log.e("pre-order-traversal", "" + mRoot?.mData)
